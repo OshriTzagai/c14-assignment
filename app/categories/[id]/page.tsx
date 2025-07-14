@@ -4,7 +4,7 @@ import PostsLayout from "@/components/PostsLayout";
 import CategoriesFilter from "@/components/CategoryFilter";
 import React from "react";
 
-async function PostsByCategory({ params }: { params: { id: number } }) {
+async function PostsByCategory({ params }: { params: { id: string } }) {
   const { id } = params;
   const posts = await getPostsByCategoryId(Number(id));
   const categories = await getCategories();
