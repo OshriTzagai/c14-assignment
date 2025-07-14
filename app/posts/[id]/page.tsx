@@ -27,7 +27,7 @@ async function SinglePost({ params }: SinglePostProps) {
         <SinglePostHeader post={post} formattedDate={formattedDate} />
       </article>
       <SinglePostContent post={post} />
-      <SinglePostComments post={post} />
+      <SinglePostComments />
     </>
   );
 }

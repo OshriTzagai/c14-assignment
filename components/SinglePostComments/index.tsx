@@ -1,14 +1,9 @@
 "use client";
-import { Comment, Post } from "@/types";
-import Image from "next/image";
-import React, { useEffect, useState } from "react";
+import { Comment } from "@/types";
+import React, { useState } from "react";
 import SingleComment from "../SingleComment";
 
-interface SinglePostCommentsProps {
-  post: Post;
-}
-
-function SinglePostComments({ post }: SinglePostCommentsProps) {
+function SinglePostComments() {
   const initialDummyComments: Comment[] = [
     {
       id: 1,

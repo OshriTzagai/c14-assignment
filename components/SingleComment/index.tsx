@@ -1,6 +1,6 @@
 import Image from "next/image";
 import React from "react";
-import { Comment, Post } from "../../types/index";
+import { Comment } from "../../types/index";
 
 function SingleComment({
   comment,
