@@ -1,14 +1,18 @@
-// app/category/[id]/page.tsx
 import { getPostsByCategoryId, getCategories } from "@/services";
 import PostsLayout from "@/components/PostsLayout";
 import CategoriesFilter from "@/components/CategoryFilter";
-import React from "react";
 
-async function PostsByCategory({ params }: { params: { id: string } }) {
-  const { id } = params;
-  const posts = await getPostsByCategoryId(Number(id));
+interface CategoryPageProps {
+  params: {
+    id: string;
+  };
+}
+
+export default async function CategoryPage({ params }: CategoryPageProps) {
+  const categoryId = Number(params.id);
+  const posts = await getPostsByCategoryId(categoryId);
   const categories = await getCategories();
-  const currentCategory = categories.find((cat) => cat.id === Number(id));
+  const currentCategory = categories.find((cat) => cat.id === categoryId);
 
   return (
     <main className="min-h-screen bg-gray-100">
@@ -25,11 +29,9 @@ async function PostsByCategory({ params }: { params: { id: string } }) {
 
         <PostsLayout
           posts={posts}
-          title={`${currentCategory?.name} פוסטים מקטגוריית `}
+          title={`פוסטים מקטגוריית ${currentCategory?.name}`}
         />
       </section>
     </main>
   );
 }
-
-export default PostsByCategory;
