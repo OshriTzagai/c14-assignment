@@ -1,5 +1,5 @@
 import { getCategories, getPosts } from "@/services";
-import { Post } from "@/types";
+import { Category, Post } from "@/types";
 import PostHero from "@/components/PostHero";
 import PostsLayout from "@/components/PostsLayout";
 import CategoriesFilter from "@/components/CategoryFilter";
@@ -28,7 +28,11 @@ export default async function Home() {
         )}
       </section>
 
-      <CategoriesFilter categories={categories} title="קטגוריות" />
+      <CategoriesFilter
+        categories={categories}
+        title="קטגוריות"
+        currentCategory={null as unknown as Category}
+      />
 
       <PostsLayout posts={posts} title="חדשות אחרונות" />
     </main>

@@ -47,6 +47,10 @@ function SinglePostComments({ post }: SinglePostCommentsProps) {
   ];
   const [comments, setComments] = useState<Comment[]>(initialDummyComments);
   const [comment, setComment] = useState<string>("");
+
+  const handleDelete = (id: number) => {
+    setComments(comments.filter((comment) => comment.id !== id));
+  };
   return (
     <div
       className="flex flex-col items-end justify-center w-full max-w-7xl mx-auto px-4 py-8 relative comments-container"
@@ -89,7 +93,11 @@ function SinglePostComments({ post }: SinglePostCommentsProps) {
       </div>
       <div className="flex flex-col items-end justify-center w-full max-w-7xl mx-auto px-4 py-8 relative comments-container gap-4">
         {comments.map((comment) => (
-          <SingleComment key={comment.id} comment={comment} />
+          <SingleComment
+            key={comment.id}
+            comment={comment}
+            handleDelete={handleDelete}
+          />
         ))}
       </div>
     </div>

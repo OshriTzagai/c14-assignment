@@ -4,11 +4,11 @@ import PostsLayout from "@/components/PostsLayout";
 import CategoriesFilter from "@/components/CategoryFilter";
 import React from "react";
 
-async function PostsByCategory({ params }: { params: { id: string } }) {
+async function PostsByCategory({ params }: { params: { id: number } }) {
   const { id } = params;
-  const posts = await getPostsByCategoryId(id);
+  const posts = await getPostsByCategoryId(Number(id));
   const categories = await getCategories();
-  const currentCategory = categories.find((cat) => cat.id === parseInt(id));
+  const currentCategory = categories.find((cat) => cat.id === Number(id));
 
   return (
     <main className="min-h-screen bg-gray-100">

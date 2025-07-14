@@ -21,8 +21,8 @@ export const getCategories = async () => {
 };
 
 
-export const getPostsByCategoryId = async (categoryId: string) => {
-    const response = await fetch(`${config.BASE_URL}/posts?categories=${Number(categoryId)}`);
+export const getPostsByCategoryId = async (categoryId: number) => {
+    const response = await fetch(`${config.BASE_URL}/posts?categories=${categoryId}`);
     const data = await response.json();
     console.log("THE POSTS BY CATEGORY ID", data);
     return data as Post[];

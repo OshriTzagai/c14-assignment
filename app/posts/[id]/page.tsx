@@ -24,12 +24,9 @@ async function SinglePost({ params }: SinglePostProps) {
     <>
       <article className="flex flex-row items-center justify-between flex-wrap w-full max-w-7xl mx-auto px-4 py-8 relative">
         <CommentsBtn />
-
         <SinglePostHeader post={post} formattedDate={formattedDate} />
       </article>
-
       <SinglePostContent post={post} />
-
       <SinglePostComments post={post} />
     </>
   );
