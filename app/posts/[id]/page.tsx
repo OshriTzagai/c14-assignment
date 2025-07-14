@@ -5,13 +5,11 @@ import SinglePostHeader from "@/components/SinglePostHeader";
 import { getPost } from "@/services";
 import { Post } from "@/types";
 import React from "react";
-interface SinglePostProps {
-  params: {
-    id: string;
-  };
-}
-async function SinglePost({ params }: SinglePostProps) {
-  const { id } = params;
+
+type Params = Promise<{ id: string }>;
+
+async function SinglePost({ params }: { params: Params }) {
+  const { id } = await params;
   const post: Post = await getPost(id);
 
   if (!post.id) {
