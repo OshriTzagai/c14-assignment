@@ -2,14 +2,11 @@ import { getPostsByCategoryId, getCategories } from "@/services";
 import PostsLayout from "@/components/PostsLayout";
 import CategoriesFilter from "@/components/CategoryFilter";
 
-interface CategoryPageProps {
-  params: {
-    id: string;
-  };
-}
+type Params = Promise<{ id: string }>;
 
-export default async function CategoryPage({ params }: CategoryPageProps) {
-  const categoryId = Number(params.id);
+export default async function CategoryPage({ params }: { params: Params }) {
+  const { id } = await params;
+  const categoryId = Number(id);
   const posts = await getPostsByCategoryId(categoryId);
   const categories = await getCategories();
   const currentCategory = categories.find((cat) => cat.id === categoryId);
