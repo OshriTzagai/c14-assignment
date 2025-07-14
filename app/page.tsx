@@ -3,6 +3,7 @@ import { Category, Post } from "@/types";
 import PostHero from "@/components/PostHero";
 import PostsLayout from "@/components/PostsLayout";
 import CategoriesFilter from "@/components/CategoryFilter";
+export const dynamic = "force-dynamic";
 
 export default async function Home() {
   let posts: Post[] = [];
