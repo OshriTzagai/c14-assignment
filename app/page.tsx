@@ -6,16 +6,16 @@ import CategoriesFilter from "@/components/CategoryFilter";
 
 export default async function Home() {
   let posts: Post[] = [];
-  const categories = await getCategories();
-  console.log("THE CATEGORIES", categories);
+  let categories: Category[] = [];
   try {
     posts = await getPosts();
+    categories = await getCategories();
   } catch (error) {
     console.error("Error fetching posts:", error);
   }
 
   const heroPost = posts[0];
-  console.log(posts);
+
   return (
     <main className="min-h-screen bg-gray-100">
       <section className="w-full max-w-7xl mx-auto px-4 py-8">

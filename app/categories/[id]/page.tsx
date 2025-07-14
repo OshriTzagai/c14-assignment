@@ -1,6 +1,7 @@
 import { getPostsByCategoryId, getCategories } from "@/services";
 import PostsLayout from "@/components/PostsLayout";
 import CategoriesFilter from "@/components/CategoryFilter";
+import { Category } from "@/types";
 
 type Params = Promise<{ id: string }>;
 
@@ -21,7 +22,7 @@ export default async function CategoryPage({ params }: { params: Params }) {
         <CategoriesFilter
           categories={categories}
           title="סנן לפי קטגוריה"
-          currentCategory={currentCategory}
+          currentCategory={currentCategory as Category}
         />
 
         <PostsLayout

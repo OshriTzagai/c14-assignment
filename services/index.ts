@@ -1,5 +1,5 @@
 import { config } from "@/config";
-import { Post } from "@/types";
+import { Category, Post } from "@/types";
 
 export const getPosts = async () => {
     const response = await fetch(`${config.BASE_URL}/posts`);
@@ -17,7 +17,7 @@ export const getCategories = async () => {
     const response = await fetch(`${config.BASE_URL}/categories`);
     const data = await response.json();
     console.log("THE CATEGORIES", data);
-    return data as any[];
+    return data as Category[];
 };
 
 
