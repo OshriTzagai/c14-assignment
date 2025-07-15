@@ -16,7 +16,6 @@ export const getPost = async (id: string) => {
 export const getCategories = async () => {
     const response = await fetch(`${config.BASE_URL}/categories`);
     const data = await response.json();
-    console.log("THE CATEGORIES", data);
     return data as Category[];
 };
 
