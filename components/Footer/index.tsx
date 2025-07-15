@@ -15,18 +15,6 @@ function Footer() {
       name: "Contact",
       href: "/contact",
     },
-    {
-      name: "Privacy Policy",
-      href: "/privacy-policy",
-    },
-    {
-      name: "Terms of Service",
-      href: "/terms-of-service",
-    },
-    {
-      name: "Cookie Policy",
-      href: "/cookie-policy",
-    },
   ];
   return (
     <footer className="bg-gray-800 text-white py-8 mt-auto">
@@ -39,8 +27,8 @@ function Footer() {
           </div>
           <div className="flex flex-wrap justify-center gap-6">
             {footerLinks.map((link, index) => (
-              <Link 
-                href={link.href} 
+              <Link
+                href={link.href}
                 key={index}
                 className="text-gray-300 hover:text-white transition-colors duration-200 text-sm"
               >
