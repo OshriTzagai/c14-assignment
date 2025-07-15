@@ -8,7 +8,7 @@ function CategoryLoading() {
           <div className="h-8 bg-gray-300 rounded-lg w-64 mx-auto animate-pulse"></div>
         </div>
 
-        <div className="mb-6 w-full max-w-7xl mx-auto px-4 py-8 flex flex-row justify-end items-center gap-3">
+        <div className="mb-6 w-full max-w-7xl mx-auto px-4 py-8 flex flex-row justify-center items-center gap-3">
           <div className="h-6 bg-gray-300 rounded w-48 animate-pulse"></div>
         </div>
         <div className="mb-6 w-full max-w-7xl mx-auto px-4 py-8 flex flex-row justify-center items-center gap-3">

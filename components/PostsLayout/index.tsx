@@ -18,7 +18,7 @@ export default function PostsLayout({ posts, title }: PostsLayoutProps) {
   return (
     <section className="w-full max-w-7xl mx-auto px-4 py-8">
       {title && (
-        <h2 className="text-2xl font-bold text-gray-900 mb-6 text-right">
+        <h2 className="text-2xl text-center font-bold text-gray-900 mb-6 ">
           {title}
         </h2>
       )}
