@@ -112,24 +112,13 @@ function NavBar() {
       {/* Mobile Menu */}
       {isMobileMenuOpen && (
         <div className="lg:hidden">
-          <div className="px-2 pt-2 pb-3 space-y-1 bg-[linear-gradient(180deg,_#C11A20_0%,_#E21F26_100%)] shadow-lg">
-            {navLinks.map((link) => (
-              <Link
-                key={link.name}
-                href={link.href}
-                className="text-white hover:text-gray-200 block px-3 py-2 text-lg font-bold transition-colors duration-200"
-                onClick={() => setIsMobileMenuOpen(false)}
-              >
-                {link.name}
-              </Link>
-            ))}
-
-            {/* Mobile Date and Live */}
-            <div className="pt-4 border-t border-white/20 mt-4">
-              <div className="text-white text-base font-bold px-3 py-2">
+          <div className="px-4 pt-4 pb-6 space-y-4 bg-[linear-gradient(180deg,_#C11A20_0%,_#E21F26_100%)] shadow-lg">
+            {/* Mobile Date and Live - Moved to top */}
+            <div className="border-b border-white/20 pb-4">
+              <div className="text-white text-base font-bold text-center mb-3">
                 יום רביעי כ׳ בתמוז התשפ״ה
               </div>
-              <div className="flex items-center space-x-2 px-3 py-2">
+              <div className="flex items-center justify-center space-x-2">
                 <Image
                   src="https://t4.ftcdn.net/jpg/05/59/28/91/360_F_559289170_iqYEig3oOxZT8X97BlqK8x8Eyng6VQHS.jpg"
                   alt="LIVE"
@@ -138,6 +127,20 @@ function NavBar() {
                   className="rounded-full"
                 />
               </div>
+            </div>
+
+            {/* Navigation Links in Grid */}
+            <div className="grid grid-cols-2 gap-3">
+              {navLinks.map((link) => (
+                <Link
+                  key={link.name}
+                  href={link.href}
+                  className="text-white hover:text-gray-200 block px-4 py-3 text-base font-semibold transition-all duration-200 bg-white/5 rounded-lg hover:bg-white/10 text-center"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
+                  {link.name}
+                </Link>
+              ))}
             </div>
           </div>
         </div>
